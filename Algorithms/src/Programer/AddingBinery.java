@@ -3,54 +3,43 @@ package Programer;
 public class AddingBinery {
 
 	class Solution {
-	    public String solution(String bin1, String bin2) {
-	    	String answer;
-	    	if(bin1.length()>bin2.length()){ 
-	    		//자리수 맞추기 자리수 차이만큼 작은 숫자 앞에 0붙이기
-	    		int t=bin1.length()-bin2.length();
-	    		setnum(bin2, t);
-	    	} else if(bin1.length()<bin2.length()){
-	    		int t=bin2.length()-bin1.length();
-	    		setnum(bin1, t);
-	    	}
-	    	
-	    	String[] str1 = bin1.split("");
-	    	String[] str2 = bin2.split("");
-	    	String[] str3 = new String[str1.length];
-	    	
-	    	for(int i=0; i<str1.length;i++) {
-	    		str3[i]=adder(str1[i],str2[i]);
-	    	}
-	    	answer=check(str3);
-	    	return answer;
-	    }
-	    public String[] check(String[] str) {
-	    	StringBuilder result=new StringBuilder(0);
-	    	for(int i=str.length-1;i>=1;i--) {
-	    		switch(str[i]) {
-	    		case "c":result.append(0);if(str[i-1]=="1") else{str[i-1]="c";
-	    		}
-	    	}
-	    	
-	    	String re="";
-	    	for(String i:result) {
-	    		re+=i;
-	    	}
-	    	return re;
-	    }
-	    public String adder(String i, String j){
-	    	if(i.equals(j)){
-	    		if (i.equals("1")) {
-	    			return "c";
-	    		} else {
-	    			return "0";
-	    		}
-	    	}else {
-	    		return "1";
-	    	}
-	    }
-	    
-	}
+		
+		    public String solution(String bin1, String bin2) {
+			    	String solution="";
+			    	String[] num1= new String[bin1.length()];
+			    	String[] num2= new String[bin2.length()];
+			    	String[] sol = new String[num1.length+1];
+			    	num1=bin1.split("");
+			    	num2=bin2.split("");
+			    	for(int i =bin1.length()-1;i>=1;i--) {
+			    		if(num1[i].equals(num2[i])){
+		                    if(num1[i].equals("1")){
+		                        sol[i+1]="c";
+		                    }else{ sol[i+1]="0";}
+		                }else{ sol[i+1]="1";}
+			    	}
+			    	for(int i=num1.length; i>=1; i--) {
+			    		if(sol[i]=="c") {
+			    			if(num1[i].equals(num2[i])){
+		                    if(num1[i].equals("1")){
+		                        sol[i]="c";
+		                        }else{ sol[i]="0";}
+		                    }else{ sol[i]="1";}
+			    		}
+			    	}
+			    	if(sol[0]=="0") {
+			    		for(int i=1;i<sol.length;i++) {
+			    			solution+=sol[i];
+			    		}
+			    	}else {
+			    		for(String str : sol) {
+			    			solution+=str;
+			    		}
+			    	}
+			    	return solution;
+			    }
+		}   
+	
 	public String setnum(String bin, int num){//자리수 맞추기위해 앞에 0추가
 		String str = "";
 		for (int i=0;i<num;i++){
