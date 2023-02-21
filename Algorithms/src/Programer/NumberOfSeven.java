@@ -17,7 +17,7 @@ public class NumberOfSeven {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] array= new int[];
+		int[] array= new int[3];
 		
 		new NumberOfSeven().solution(array);
 	}
