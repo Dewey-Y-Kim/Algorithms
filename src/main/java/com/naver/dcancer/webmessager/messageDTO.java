@@ -1,8 +1,8 @@
 package com.naver.dcancer.webmessager;
 
-public class massageDTO {
+public class messageDTO {
 
-	public massageDTO() {
+	public messageDTO() {
 		// TODO Auto-generated constructor stub
 	}
 	private String message;

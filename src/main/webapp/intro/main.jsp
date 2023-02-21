@@ -9,10 +9,10 @@
 </head>
 
 <body>
-	<form action="sendmsg.jsp?name=type" method="post">
+	<form action="sendmsg.jsp?name=type" method="post" onkeyup="if(window.event.keyCode==13){commit()">
 	<ul>
-	<div id="content"></div>
-	<div id="messagebox"><intput type=text id="text" name="text"> onkeyup="if(window.event.keyCode==13){commit();}</div>
+		<div id="content"></div>
+		<div id="messagebox"><intput type="text" id="text" name="text"></intput></div>
 	</ul>
 	</form>
 </body>
