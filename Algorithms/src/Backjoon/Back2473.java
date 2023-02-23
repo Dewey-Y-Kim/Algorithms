@@ -19,17 +19,34 @@ public class Back2473 {
 		for(int i=0;i<num;i++) {
 			list[i]=sc.nextInt();
 		}
-		int s=0,e=0;
+		
 		Arrays.sort(list);
-		int min=0;
-		for(int i=0;i<num;i++) {
-			if (list.length==3||list[0]>0){ System.out.println(0+" "+1+" "+2); break;}
-			if(list[num-1]<0) {System.out.println((num-3)+" "+(num-2)+" "+(num-1));break;}
-			if(s==i) {s++;}
-			if(e==i) {e++;}
-			if(e==s) {e++;}
-			
+		int[] com= {0,1,2};
+		int s=0,e=2;
+		if (list.length==3||list[0]>0){ com[0]=0;com[1]=1;com[2]=2; }else if(list[num-1]<0) {com[0]=(num-3);com[1]=(num-2);com[2]=(num-1);
+		}else {
+			for(int i=0;i<num;i++) {
+				while(true){
+					if(s>=num) {
+						break;
+					}
+					if(e!=i&&i!=s&&s!=e&&(Math.abs(list[com[0]]+list[com[1]]+list[com[2]])>Math.abs(list[e]+list[i]+list[s]))) {
+						com[0]=e;
+						com[1]=i;
+						com[2]=s;
+						}
+					if(list[e]+list[i]+list[s] < 0) {
+						s++;
+					}else {
+						e++;
+					}
+					if(e==s) {s++;}
+					
+				}
+			}
 		}
+		Arrays.sort(com);
+		System.out.println(com[0]+" "+com[1]+" "+com[2]);
 	}
 }	
 
