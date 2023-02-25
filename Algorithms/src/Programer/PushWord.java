@@ -6,7 +6,7 @@ import java.util.Collections;
 public class PushWord {
 
 	public PushWord() {
-		// TODO Auto-generated constructor stub
+		// 미완
 	}
 	public int Solution(String A, String B) {
 		int answer =0;
