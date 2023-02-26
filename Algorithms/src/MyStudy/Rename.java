@@ -15,7 +15,7 @@ public class Rename {
 		  chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		    int returnVal = chooser.showOpenDialog(null);
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {
-		    	System.out.println(chooser.getCurrentFileName().getName());
+		    	System.out.println(chooser.getCurrentFileName()
 		       String S = chooser.getCurrentDirectory().getName();
 		       System.out.println(S);
 		       return chooser;
