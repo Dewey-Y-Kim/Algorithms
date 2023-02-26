@@ -17,7 +17,7 @@ public class DbC {
 	protected ResultSet rs = null;
 	
 	String url = "jdbc:oracle:thin:@192.168.0.198:1521:xe"; //내부망에 주소 부여
-	String userid = "Scott";
+	String id = "Scott";
 	String pw = "tiger";	
 		
 	protected String sql = null;
@@ -34,7 +34,7 @@ public class DbC {
 	//DB Connect
 	public void Connect() {
 		try {
-			connect = DriverManager.getConnection(url, userid, pw);
+			connect = DriverManager.getConnection(url, id, pw);
 		}catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("연결에 실패했습니다.");
