@@ -25,7 +25,7 @@ public class J01Variable {
 						  true,1000,1000,1000,1000.10,1e2f,'a',"asbd");
 		
 		Scanner sc = new Scanner(System.in);
-		// int i= sc.nextInt();
+		// wint i= sc.nextInt();
 		// System.out.println(i);
 		
 		int num =Integer.parseInt((Integer.toBinaryString(25)),2);
