@@ -14,6 +14,8 @@ public class PushWord {
 		boolean result=false;
 		for(i=0; i<A.length();i++) {
 			result=(B.substring(i)+B.substring(0,i)).equals(A);
+			System.out.println((B.substring(i)+B.substring(0,i)).equals(A));
+			System.out.println(i);
 			if(result) {
 				break;
 			}
@@ -30,9 +32,13 @@ public class PushWord {
 		return answer;
 	}
 	public int Solution2(String A,String B) {
-		ArrayList<Character> str=new ArrayList<>();
-		
-		
+		ArrayList<String> str=new ArrayList<>();
+		System.out.println(str.size());
+		for (String i : A.split("")) {
+			str.add(i);
+		}
+		System.out.println(str.size());
+		System.out.println(str.toString());
 		return 0;
 	}
 	public static void main(String[] args) {
@@ -41,8 +47,7 @@ public class PushWord {
 		 *  이것을 문자열을 민다고 정의한다면 문자열 A와 B가 매개변수로 주어질 때, A를 밀어서 B가 될 수 있다면 밀어야 하는 
 		 *  최소 횟수를 return하고 밀어서 B가 될 수 없으면 -1을 return 하도록 solution 함수를 완성해보세요.
 		 */
-		Collections.rotate(null, 0);
-		System.out.println(new PushWord().Solution("hello", "elloh"));	
+		System.out.println(new PushWord().Solution("121213", "121312"));	
 		
 	}
 
