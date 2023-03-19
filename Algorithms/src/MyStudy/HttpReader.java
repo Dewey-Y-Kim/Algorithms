@@ -79,7 +79,7 @@ public class HttpReader {
 
 	public static void main(String[] args) {
 		HttpReader c= new HttpReader();
-		String str=c.getHTMLbyBF("https://velog.io/@mingsomm/%EC%9E%90%EB%B0%94%EB%A1%9C-html-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%88%98%EC%A0%95");
+		String str=c.getHTMLbyBF("URLPATH");
 		c.HtmlWriter(str);
 	}
 }
