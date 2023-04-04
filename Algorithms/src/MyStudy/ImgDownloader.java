@@ -12,9 +12,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
-public class HttpReader {
 
-	public HttpReader() {
+public class ImgDownloader {
+
+	public ImgDownloader() {
 		// TODO Auto-generated constructor stub
 	}
 	public String getStreamByIS(String Read) {
@@ -49,12 +50,6 @@ public class HttpReader {
 			HttpURLConnection connect=(HttpURLConnection)url.openConnection();
 			connect.setRequestMethod("GET");
 			BufferedReader br = new BufferedReader(new InputStreamReader(connect.getInputStream()));
-			System.out.println("url="+url);
-			System.out.println("Protocol="+url.getProtocol());
-			System.out.println("host="+url.getHost());
-			System.out.println("content="+url.getContent());
-			System.out.println("Path="+url.getPath());
-			System.out.println("Query="+url.getQuery());
 			String line;
 			while((line=br.readLine())!=null) {
 				result += line +'\n';
@@ -81,20 +76,10 @@ public class HttpReader {
 			e.printStackTrace();
 		}
 	}
-	public void ImageGetter(String address) {
-		HttpServletRequest request = new HttpServletRequest();
-		
-		URL url=new URL(address);
-		System.out.println("url="+url);
-		System.out.println("Protocol="+url.getProtocol());
-		System.out.println("host="+url.getHost());
-		System.out.println("content="+url.getContent());
-		System.out.println("Path="+url.getPath());
-		System.out.println("Query="+url.getQuery());
-	}
+
 	public static void main(String[] args) {
-		HttpReader c= new HttpReader();
-		String str=c.getHTMLbyBF("https://www.hyundai.com/contents/vr360/CE01/exterior/XB9/001.png");
+		ImgDownloader c= new ImgDownloader();
+		String str=c.getHTMLbyBF("URLPATH");
 		c.HtmlWriter(str);
 	}
 }
